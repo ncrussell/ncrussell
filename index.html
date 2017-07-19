@@ -1,0 +1,187 @@
+<CTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <title>Homepage of Dr Nick Russell</title>
+  <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2446796-13");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+  <style type="text/css">
+<!--
+body,td,th {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+}
+body {
+margin-left: 100px;
+margin-right: 650px;
+margin-top: 50px;
+}
+.style7 {font-size: medium}
+-->
+  </style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0"
+ width="650">
+  <tbody>
+    <tr>
+      <td height="256" width="419">
+      <table style="width: 428px; height: 222px;" border="0"
+ cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td colspan="1" rowspan="3"
+ style="width: 428px; height: 33px; vertical-align: top;">
+            <h1>Dr Nick Russell</h1>
+            <span class="style7">Principal Research Fellow<br />
+Queensland University of Technology</span><br />
+            <span class="style7"> 2 George St<br />
+Brisbane QLD 4000</span><br />
+            <span class="style7"> AUSTRALIA</span>
+            <table style="width: 406px; height: 55px;"
+ border="0">
+              <tbody>
+                <tr>
+                  <td colspan="1" rowspan="1"
+ width="135">Email: n.russell
+&lt;AT&gt; qut &lt;dot&gt; edu &lt;dot&gt; au</td>
+                </tr>
+              </tbody>
+            </table>
+            </td>
+            <td height="256" width="231"><img
+ src="https://www.dropbox.com/s/yslyz8df0d9297k/image001.jpg?raw=1" alt="Pic" align="middle"
+ border="0" height="224" width="204" /></td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+      <table border="0" cellpadding="2" cellspacing="0"
+ width="648">
+        <tbody>
+          <tr>
+            <td width="644">
+            <h2>Short Biography</h2>
+            <p align="justify"><span
+ style="font-family: Arial;">Nick Russell has over 20 years
+experience in the ICT industry in a variety of technical and senior
+management roles. During this time, he has led a number of high-profile
+systems integration, commercial research and product development
+initiatives for organizations in the financial services and retail
+sectors. From 2007 to 2009, he spent two years conducting research into
+business process management and process-aware information systems at
+the Technische Universiteit Eindhoven in the Netherlands. From 2009 to 2014 he was CIO for a major Australian tools supplier with national
+responsibility for ICT and BPM. He is currently a Research Project Manager in
+the Information Systems School  at QUT. Over the past seven years, he has been the
+driving force for the extension of the workflow patterns to the data,
+resource and exception handling perspectives and the development of the
+            <i>new</i>YAWL business process modelling
+reference language.</span></p>
+            <h2>Research Interests</h2>
+            <ul>
+              <li><span style="font-family: Arial;">Business
+process management</span></li>
+              <li><span style="font-family: Arial;">Workflow
+technology</span></li>
+              <li><span style="font-family: Arial;">Health
+informatics</span></li>
+              <li><span style="font-family: Arial;">Rapid
+application development</span></li>
+              <li><span style="font-family: Arial;">Autonomic
+computing</span></li>
+            </ul>
+            <h2>Major Publications</h2>
+            <p align="justify">N. Russell, W.M.P.van der
+Aalst, A.H.M. ter Hofstede, and D. Edmond. <a
+ href="http://dx.doi.org/10.1007/11431855_16">Workflow
+Resource Patterns: Identification, Representation and Tool Support</a>.
+In O. Pastor and J. Falcao e Cunha, editors, Proceedings of the 17th
+Conference on Advanced Information Systems Engineering (CAiSE'05),
+volume 3520 of Lecture Notes in Computer Science, pages 216-232.
+Springer-Verlag, Berlin, 2005. </p>
+            <p align="justify">N. Russell, A.H.M. ter
+Hofstede, D. Edmond, and W.M.P. van der Aalst. <a
+ href="http://dx.doi.org/10.1007/11568322_23">Workflow Data
+Patterns: Identification, Representation and Tool Support</a>. In
+L. Delcambre, C. Kop, H.C. Mayr, J. Mylopoulos, and O. Pastor, editors,
+24nd International Conference on Conceptual Modeling (ER 2005), volume
+3716 of Lecture Notes in Computer Science, pages 353-368.
+Springer-Verlag, Berlin, 2005. </p>
+            <p align="justify">N. Russell, W.M.P. van der
+Aalst, A.H.M. ter Hofstede, and P. Wohed. <a
+ href="http://doi.acm.org/10.1145/1151855.1151866">On the
+Suitability of UML Activity Diagrams for Business Process Modelling</a>.
+In Markus Stumptner, Sven Hartmann, and Yasushi Kiyoki, editors,
+Proceedings of the Third Asia-Pacific Conference on Conceptual
+Modelling (APCCM 2006), volume 53 of Conferences in Research and
+Practice in Information Technology series (CRPIT), pages 95-104,
+Hobart, Australia, 2006. ACS. </p>
+            <p align="justify">N. Russell, W.M.P. van der
+Aalst, and A.H.M. ter Hofstede. <a
+ href="http://dx.doi.org/10.1007/11767138_20">Workflow
+Exception Patterns</a>. In E. Dubois and K. Pohl, editors,
+Proceedings of the 18th International Conference on Advanced
+Information Systems Engineering (CAiSE'06), volume 4001 of Lecture
+Notes in Computer Science, pages 288-302. Springer-Verlag, Berlin,
+2006. </p>
+            <p align="justify">N. Russell and W.M.P. van
+der Aalst. <a href="http://dx.doi.org/10.1007/978-3-540-69534-9_7">Work
+Distribution and Resource Management in BPEL4People: Capabilities and
+Opportunities</a>. In Z. Bellahsene and M. Leonard, editors,
+Proceedings of the 20th International Conference on Advanced
+Information Systems Engineering (CAiSE'08), volume 5074 of Lecture
+Notes in Computer Science, pages 94-108. Springer-Verlag, Berlin, 2008.
+            </p>
+            <p align="justify">N. Russell and W.M.P. van
+der Aalst. <em>new</em>YAWL: <a
+ href="http://wwwis.win.tue.nl/%7Ewvdaalst/publications/p463.pdf">Designing
+a Workflow System Using Coloured Petri Nets</a>. In N. Sidorova,
+D. Moldt, and H. Rolke, editors, Proceedings of the International
+Workshop on Petri Nets and Distributed Systems (PNDS'08), pages 67-84.
+Xidian University, 2008. </p>
+            <p align="justify">N.C. Russell, <a
+ href="http://www.yawlfoundation.org/documents/RussellThesisFinal.pdf">Foundations
+of Process-Aware Information Systems</a>, PhD Thesis, Queensland
+University of Technology, 2007. </p>
+            <p align="justify">N.C. Russell,
+Interoperability Protocols for Heterogeneous and Legacy Database
+Systems, Masters Thesis, Queensland University of Technology, 1995.</p>
+            <p>A full list is available <a
+ href="https://www.dropbox.com/s/6ejkr4y4wu5e76u/publications.html">here</a></p>
+            <h2>Qualifications</h2>
+            <ul>
+              <li><span style="font-family: Arial;">Bachelor
+of Science, University of Queensland, 1988</span></li>
+              <li><span style="font-family: Arial;">Master
+of Information Technology, Queensland University of Technology, 1995</span></li>
+              <li><span style="font-family: Arial;">Doctor
+of Philosophy, Queensland University of Technology, 2007</span></li>
+            </ul>
+            <h2>CV</h2>
+            <p>Available on request</p>
+            <p>&nbsp;</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>&nbsp;</h2>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"794fb14947","applicationID":"16351621,3733199","transactionName":"ZFAGZhEFXBBWAkYICV0aMUAKS1sNUwRKTxZbRQ==","queueTime":0,"applicationTime":0,"atts":"SBcFEFkfTx4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+
+
